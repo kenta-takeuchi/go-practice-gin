@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link rel="stylesheet" href="assets/semantic/semantic.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="assets/semantic/semantic.js"></script>
+    <style type="text/css">
+        #contents {margin: 60px 20px;}
+    </style>
+</head>
+<body>
+    <div class="ui inverted large borderless fixed fluid menu column">
+        <a class="header item" href="/">Todo管理アプリ</a>
+    </div>
+
+    <div class="container" id="contents">
+{{/*        <h3>*/}}
+{{/*            <a class="ui basic button" href="/detail/{{.ID}}">タグ追加</a>*/}}
+{{/*        </h3>*/}}
+        <div class="ui three column grid">
+            <div class="column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header" href="#">タグ</div>
+
+                        <div class="description">
+                            {{ range .todos }}
+                                <a class="ui fluid card" href="/detail/{{.ID}}">
+                                    <h5>
+                                        {{ if eq .Status "未実行" }}
+                                            <div class="ui blue message">{{ .Text }}</div>
+                                        {{ else if eq .Status "実行中" }}
+                                            <div class="ui teal message">{{ .Text }}</div>
+                                        {{ else }}
+                                            <div class="ui message">{{ .Text }}</div>
+                                        {{ end }}
+                                    </h5>
+                                </a>
+                            {{ end }}
+                            <a class="ui bottom attached button" href="/add">
+                                <i class="add icon"></i>
+                                Todoを追加
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

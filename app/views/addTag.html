@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo管理アプリ</title>
+    <link rel="stylesheet" href="assets/semantic/semantic.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="assets/semantic/semantic.js"></script>
+    <style type="text/css">
+        #contents {margin-top: 60px;}
+    </style>
+</head>
+<body>
+<div class="ui inverted large borderless fixed fluid menu column">
+    <a class="header item" href="/">Todo管理アプリ</a>
+</div>
+
+<div class="ui ui center aligned container" id="contents">
+    <form class="ui form" method="post" action="/tagRegist">
+        <div class="field">
+            <label>タグ名</label>
+            <input type="text" name="name" placeholder="タグ名">
+        </div>
+        <button class="ui button" type="submit">登録</button>
+    </form>
+</div>
+</body>
+</html>
